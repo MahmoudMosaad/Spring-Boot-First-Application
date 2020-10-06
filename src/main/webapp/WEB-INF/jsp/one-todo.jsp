@@ -5,7 +5,7 @@
 
 	<br /> <br />
 	<TABLE class="table table-striped">
-		<caption>Your Todos Are</caption>
+		<caption> All Details about ' ${onetodo.getDesc()} '</caption>
 		<TR>
 			<TH>Description</TH>
 			<TH>Name</TH>
@@ -14,22 +14,17 @@
 			<th>Update</th>
 
 		</TR>
-		<c:forEach var="todo" items="${todos }">
 			<TR>
-				<TD><a href="/one-todo?id=${todo.getId()}">${todo.getDesc()}</a></TD>
-				<TD>${todo.getUser()}</TD>
-				<TD><fmt:formatDate value="${todo.targetDate}" /></TD>
+				<TD>${onetodo.getDesc()}</TD>
+				<TD>${onetodo.getUser()}</TD>
+				<TD><fmt:formatDate value="${onetodo.targetDate}" /></TD>
 				<td><a type="button" class="btn btn-warning"
-					href="/delete-todo?id=${todo.getId()}">Delete</a></td>
+					href="/delete-todo?id=${onetodo.getId()}">Delete</a></td>
 				<td><a type="button" class="btn btn-success"
-					href="/update-todo?id=${todo.getId()}">Update</a></td>
+					href="/update-todo?id=${onetodo.getId()}">Update</a></td>
 			</TR>
-		</c:forEach>
 	</TABLE>
 	<br />
 
-	<div class="btn">
-		<a href="/add-todo"> Add Todo</a>
-	</div>
 </div>
 <%@ include file="common/footer.jspf"%>
